@@ -15,4 +15,10 @@ public class Mensaje {
            this.ip = ip;
            this.texto = texto;
         }
+        private String invierte(String txt) {
+        int i;
+        String resultado = "";
+        for (i = txt.length() - 1; i >= 0; i--) {
+            resultado += txt.charAt(i);
+        } // Fin para
 }
