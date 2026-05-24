@@ -59,38 +59,48 @@ public class Mensaje {
     public String encripta(String msg) {
         int i;
         String invertido = "";
-        String resultado = "";
+		Char ultimocaracter = "";
+        String desplazado = "";
         String encriptado = "";
+		
         for (i = msg.length() - 1; i >= 0; i--) {
             invertido += msg.charAt(i);
         }
-        for (i = 1; i >= 0; i++) {
-            resultado += invertido.charAt(i);
+		ultimocaracter = invertido.charAt(invertido.length -1)
+        for (i = invertido.length -1; i >= 1; i--) {
+            desplazado = invertido.charAt(i) + desplazado;
         }
-        for (i = resultado.length() - 1; i >= 0; i++) {
-            encriptado += resultado.charAt(i) + 3;
+		desplazado = ultimocaracter + desplazado;
+		
+        for (i = desplazado.length() - 1; i >= 0; i--) {
+            encriptado += desplazado.charAt(i) + 3;
         }
         return encriptado;
     }
 
     public String desencripta(String msg) {
-            int i;
+        int i;
+		String resultado;
         String invertido = "";
-        String resultado = "";
-        String encriptado = "";
+        String desplazado = "";
+		Char primercaracter = "";
+        String desencriptado = "";
         
         for (i = msg.length() - 1; i >= 0; i--) {
-            encriptado += msg.charAt(i) - 3;
+            desencriptado += msg.charAt(i) - 3;
         }
-        for (i = 1; i >= 0; i--) {
-            invertido += encriptado.charAt(i);
+		primercaracter = desencriptado.charAt(0)
+        for (i = 0; i <= desencripta.length - 2; i++) {
+            desplazado = desplazado + desencripta.charAt(i);
         }
-        
-        for (i = invertido.length() - 1; i >= 0; i++) {
-            resultado += invertido.charAt(i);
+		desplazado = desplazado + primercaracter;
+		
+        for (i = desplazado.length() - 1; i >= 0; i--) {
+            resultado += desplazado.charAt(i);
         }
         return resultado;
     }
+    
     public String reverse(String cad) {
         int i;
         String inverso = "";
