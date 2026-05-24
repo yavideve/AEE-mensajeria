@@ -51,30 +51,33 @@ public class Mensajeria {
                         System.out.println("IP: " + mensaje.getIp());
                         System.out.println("Texto: ");
                         System.out.println(mensaje.getText());
+                        // Fin si
                     } else {
                         System.out.println("No hay más mensajes");
 
-                    }
+                    } // Fin funcion
                     break;
                 case 4:
-                    if (colaMensajes.esColaVacia() == true ) {
-                           op = 0;
-                     } else if  (colaMensajes.esColaVacia() == false) {
+                    if (colaMensajes.esColaVacia() == true) {
+                        op = 0;
+                        // Fin si
+                    } else if (colaMensajes.esColaVacia() == false) {
                         System.out.println("Hay mensajes pendientes de recibir ¿Salir de todas formas? (S/N)");
                         respuesta = Leer.datoChar();
                         if (respuesta == 'S') {
                             op = 0;
-                        } else if (respuesta != 'S'){
+                            // Fin si
+                        } else if (respuesta != 'S') {
                             break;
-                        }
+                        } // Fin funcion
 
-                    }
-                 
-                    }
-               if (op != 0 ) {
-                        System.out.println("Elija opción");
-                        op = Leer.datoShort();
+                    }// Fin funcion
+
+            }  // Fin segun sea
+            if (op != 0) {
+                System.out.println("Elija opción");
+                op = Leer.datoShort();
             }
-        }
+        } //Fin mientras
     }
 }
