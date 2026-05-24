@@ -23,23 +23,23 @@ public class Mensaje {
     }
     public String getAPIPA() {
         return this.APIPA;
-    }
+    } // Fin función
 
     public String getUsuario() {
         return this.usuario;
-    }
+    } // Fin función
 
     public GregorianCalendar getFecha() {
         return this.fecha;
-    }
+    } // Fin función
 
     public String getIp() {
        return this.ip;
-    }
+    } // Fin función
 
     public String getText() {
         return this.texto;
-    }
+    } // Fin función
 
     public boolean esValido(String ip) {
         String ipv4 = "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}";
@@ -48,7 +48,7 @@ public class Mensaje {
         } else {
             return false;
         }
-    }
+    } // Fin función
 
     public String encripta(String msg) {
         int i;
@@ -70,7 +70,7 @@ public class Mensaje {
             encriptado += desplazado.charAt(i) + 3;
         }
         return encriptado;
-    }
+    } // Fin función
 
     public String desencripta(String msg) {
         int i;
@@ -93,7 +93,7 @@ public class Mensaje {
             resultado += desplazado.charAt(i);
         }
         return resultado;
-    }
+    } // Fin función
 
     public String reverse(String cad) {
         int i;
@@ -102,5 +102,5 @@ public class Mensaje {
             inverso += cad.charAt(i);
         }
         return inverso;
-    }
+    } // Fin función
 }
