@@ -42,7 +42,7 @@ public class Mensajeria {
                 case 3:
                     mensaje = (Mensaje) colaMensajes.sacarDeCola();
                     System.out.println("Usuario: " + mensaje.getUsuario());
-                    System.out.print(mensaje.fecha.get(Calendar.DATE)); 
+                    System.out.print("Fecha: "+mensaje.fecha.get(Calendar.DATE)); 
                     System.out.print("/" + (mensaje.fecha.get(Calendar.MONTH) + 1)); 
                     System.out.println("/" + mensaje.fecha.get(Calendar.YEAR)); 
                     System.out.println("IP: " + mensaje.getIp());
