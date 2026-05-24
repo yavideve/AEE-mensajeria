@@ -16,13 +16,11 @@ public class Cola {
 
     public Object sacarDeCola() {
         
-            if (tCola.isEmpty()) {
-                System.out.println("La cola esta vacia");
+            if (tCola.isEmpty() == false) {
+               return tCola.poll();
             }
-            return tCola.poll();
-
+        return null;
     }
-
     public boolean esColaVacia() {
         return tCola.isEmpty();
     }
