@@ -1,16 +1,9 @@
 
-
 import java.util.GregorianCalendar;
 
 /**
  *
- * @author Kilian David Corrales Pacheco
- */
-import java.util.GregorianCalendar;
-
-/**
- *
- * @author Jimenez Marquez Javier
+ * @author Jimenez Marquez Javier y Kilian David Corrales Pacheco
  */
 public class Mensaje {
 
