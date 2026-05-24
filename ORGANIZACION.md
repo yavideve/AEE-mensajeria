@@ -14,3 +14,5 @@ menú por consola en la clase `Mensajeria` y las opciones 1 y 2
 recepción de la cola y el control de salida con confirmación,
 se implementaron las opciones restantes y se hicieron pruebas
 ## 3. Evidencia del Trabajo Síncrono
+<img width="1550" height="561" alt="image" src="https://github.com/user-attachments/assets/28d37d31-5be9-48eb-8485-f7b3d4e8dd47" />
+<img width="622" height="93" alt="image" src="https://github.com/user-attachments/assets/e9f0240b-1f4e-419b-8d2d-54b9b82b4fc9" />
