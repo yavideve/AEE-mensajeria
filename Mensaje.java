@@ -24,7 +24,7 @@ public class Mensaje {
         this.usuario = usuario;
         this.fecha = fecha;
         this.ip = ip;
-        this.texto = texto;
+        this.texto = texto.toUpperCase();
     }
 
     public String getAPIPA() {
