@@ -59,7 +59,7 @@ public class Mensaje {
     public String encripta(String msg) {
         int i;
         String invertido = "";
-		Char ultimocaracter = "";
+		char ultimocaracter = "";
         String desplazado = "";
         String encriptado = "";
 		
@@ -77,21 +77,20 @@ public class Mensaje {
         }
         return encriptado;
     }
-
-    public String desencripta(String msg) {
-        int i;
+	    public String desencripta(String msg) {
+            int i;
 		String resultado;
         String invertido = "";
         String desplazado = "";
-		Char primercaracter = "";
+		char primercaracter = "";
         String desencriptado = "";
         
         for (i = msg.length() - 1; i >= 0; i--) {
             desencriptado += msg.charAt(i) - 3;
         }
 		primercaracter = desencriptado.charAt(0)
-        for (i = 0; i <= desencripta.length - 2; i++) {
-            desplazado = desplazado + desencripta.charAt(i);
+        for (i = 0; i <= desencriptado.length - 2; i++) {
+            desplazado = desplazado + desencriptado.charAt(i);
         }
 		desplazado = desplazado + primercaracter;
 		
@@ -100,7 +99,7 @@ public class Mensaje {
         }
         return resultado;
     }
-    
+	
     public String reverse(String cad) {
         int i;
         String inverso = "";
