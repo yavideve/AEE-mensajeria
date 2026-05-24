@@ -1,4 +1,7 @@
-package mensajeria;
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 import java.util.LinkedList;
 
@@ -8,20 +11,29 @@ import java.util.LinkedList;
  */
 public class Cola {
 
-    LinkedList<String> tCola = new LinkedList<>();
+    private LinkedList<String> tCola = new LinkedList<>();
+
+    ;
 
     public Cola() {
     }
 
     public void meterEnCola(Object obj) {
-    tCola.offer((String) obj);
+        tCola.offer((String) obj);
     }
 
     public Object sacarDeCola() {
-    return tCola.peek();
+        {
+
+            if (tCola.isEmpty()) {
+                System.out.println("La cola esta vacia");
+            }
+            return tCola.poll();
+
+        }
     }
 
     public boolean esColaVacia() {
         return tCola.isEmpty();
-}
+    }
 }
