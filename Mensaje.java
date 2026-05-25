@@ -1,3 +1,4 @@
+package mensajeria;
 import java.util.GregorianCalendar;
 
 /**
@@ -7,18 +8,25 @@ import java.util.GregorianCalendar;
 public class Mensaje {
     private final String APIPA = "169.254.0.1";
     private String usuario = "System";
-    GregorianCalendar fecha = new GregorianCalendar(2026, 4, 24);
+    GregorianCalendar fecha = new GregorianCalendar();
     private String ip = APIPA;
     private String texto = "POR DEFECTO";
     
-    public Mensaje() {}
-    public Mensaje(String usuario, GregorianCalendar fecha, String ip, String texto) {
+    public Mensaje() {
         this.usuario = usuario;
         this.fecha = fecha;
         this.ip = ip;
-        this.texto = texto.toUpperCase();
+        this.texto = encripta(texto.toUpperCase());
     }
     public Mensaje(String usuario, String ip, String texto) {
+        this.usuario = usuario;
+        this.fecha = fecha;
+        if (esValido(ip)) {
+         this.ip = ip;
+        } else {
+            this.ip = APIPA;
+        }
+        this.texto = encripta(texto.toUpperCase());      
         
     }
     public String getAPIPA() {
@@ -38,7 +46,7 @@ public class Mensaje {
     } // Fin función
 
     public String getText() {
-        return this.texto;
+        return desencripta(this.texto);
     } // Fin función
 
     public boolean esValido(String ip) {
@@ -60,14 +68,8 @@ public class Mensaje {
         for (i = msg.length() - 1; i >= 0; i--) {
             invertido += msg.charAt(i);
         }
-        ultimocaracter = invertido.charAt(invertido.length() - 1);
-        for (i = invertido.length() - 1; i >= 1; i--) {
-            desplazado = invertido.charAt(i) + desplazado;
-        }
-        desplazado = ultimocaracter + desplazado;
-
-        for (i = desplazado.length() - 1; i >= 0; i--) {
-            encriptado += desplazado.charAt(i) + 3;
+        for (i = invertido.length() - 1; i >= 0; i--) {
+            encriptado += (char)(invertido.charAt(i) + 3);
         }
         return encriptado;
     } // Fin función
@@ -76,21 +78,13 @@ public class Mensaje {
         int i;
         String resultado = "";
         String invertido = "";
-        String desplazado = "";
-        char primercaracter;
         String desencriptado = "";
 
         for (i = msg.length() - 1; i >= 0; i--) {
-            desencriptado += msg.charAt(i) - 3;
+            desencriptado += (char)(msg.charAt(i) - 3);
         }
-        primercaracter = desencriptado.charAt(0);
-        for (i = 0; i <= desencriptado.length() - 2; i++) {
-            desplazado = desplazado + desencriptado.charAt(i);
-        }
-        desplazado = desplazado + primercaracter;
-
-        for (i = desplazado.length() - 1; i >= 0; i--) {
-            resultado += desplazado.charAt(i);
+        for (i = desencriptado.length() - 1; i >= 0; i--) {
+            resultado += desencriptado.charAt(i);
         }
         return resultado;
     } // Fin función
